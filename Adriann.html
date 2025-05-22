@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriann</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            color: #222;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: #222;
+            color: #fff;
+            padding: 30px 0 10px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        header .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+        }
+        header .tagline {
+            margin: 10px 0 20px 0;
+            font-weight: 300;
+            font-size: 1.1rem;
+            color: #b0b0b0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #00bfae;
+        }
+        .hero-section {
+            position: relative;
+            background: linear-gradient(120deg, #00bfae 0%, #5eaefd 100%);
+            color: #fff;
+            padding: 60px 0 40px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.15);
+            z-index: 1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        .profile-pic {
+            width: 400px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            margin-bottom: 20px;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 28px;
+            background: #fff;
+            color: #00bfae;
+            border-radius: 30px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: background 0.2s, color 0.2s;
+        }
+        .btn:hover, .download-btn:hover {
+            background: #00bfae;
+            color: #fff;
+        }
+        section {
+            padding: 40px 0;
+        }
+        h2 {
+            font-size: 1.7rem;
+            margin-bottom: 20px;
+            color: #00bfae;
+            font-weight: 700;
+        }
+        .about-section {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+        }
+        .about-section p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            color: #444;
+        }
+        .projects-section {
+            background: #f6fafd;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+        }
+        .project-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+        .project-item {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 18px;
+            width: 300px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-align: left;
+        }
+        .project-item:hover {
+            transform: translateY(-6px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(0,191,174,0.12);
+        }
+        .project-item img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 12px;
+        }
+        .project-link {
+            display: inline-block;
+            margin-right: 10px;
+            color: #00bfae;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        .project-link i {
+            margin-left: 5px;
+        }
+        .project-link:hover {
+            color: #5eaefd;
+        }
+        .skills-section {
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+        }
+        .skills-list ul {
+            list-style: none;
+            padding: 0;
+            font-size: 1.05rem;
+        }
+        .skills-list li {
+            margin-bottom: 10px;
+        }
+        .contact-section {
+            background: #f6fafd;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+        }
+        .contact-section .contact-info p {
+            font-size: 1.05rem;
+            margin: 8px 0;
+        }
+        .contact-section .contact-info i {
+            color: #00bfae;
+            margin-right: 8px;
+        }
+        @media (max-width: 700px) {
+            .container {
+                width: 98%;
+                padding: 0 4px;
+            }
+            header h1 {
+                font-size: 1.4rem;
+            }
+            .hero-section {
+                padding: 30px 0 20px 0;
+            }
+            .profile-pic {
+                width: 120px;
+                height: 120px;
+            }
+            .project-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+            .project-item {
+                width: 98%;
+                padding: 12px;
+            }
+            h2 {
+                font-size: 1.2rem;
+            }
+            nav ul {
+                gap: 8px;
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Adrian Floresca</h1>
+            <p class="tagline">Student</p>
+            <nav>
+                <ul>
+                    <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+                    <li><a href="#certificate"><i class="fas fa-certificate"></i> Certificates</a></li>
+                    <li><a href="#projects"><i class="fas fa-code"></i> Projects</a></li>
+                    <li><a href="#skills"><i class="fas fa-cogs"></i> Skills</a></li>
+                    <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <img src="https://scontent.fcrk2-3.fna.fbcdn.net/v/t39.30808-6/498174396_1373585653752539_2478103406082369155_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHYT6d4Zni5Q5W5iLBZGmg3a7WhXaET7rdrtaFdoRPut1Cnc2cKF-WjyqXC2TAuWFyKXpLUpMS8TAJrP8klDcM0&_nc_ohc=9iDHON7t2sYQ7kNvwFrHi7I&_nc_oc=AdnLyKs64Q6mai88f-w7w_wSx0-EzfPHLYlRsWVuw_K39Q2HAbtr7QkaVfvI4lhXTzg&_nc_zt=23&_nc_ht=scontent.fcrk2-3.fna&_nc_gid=isMN6HpJdguGULaCrGLAIA&oh=00_AfLWvviOOi4biIPvSKbAoyYxOBX0eIxhq9l9j7o5zfl1EQ&oe=6834969F" alt="Adrian Floresca" class="profile-pic">
+            <h2>Hello, I'm Adrian!</h2>
+            <p>Welcome to my e-portfolio. Here you'll find a collection of my work, skills, and experiences. I am passionate about building beautiful, functional web experiences and dedicated to continuous learning.</p>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I'm Adrian Floresca, a 19-year-old in my first year of college at Pampanga State Agricultural University, studying BSIT. My main goal is to become a web developer or a software developer.</p>
+        </div>
+    </section>
+
+    <section id="certificate" class="certificate-section">
+        <div class="container">
+            <h2>My Certificates</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="https://drive.google.com/thumbnail?id=1m5yWOEaAt33iCrNZ4oOXHyPYgHmigv63&sz=s800" alt="certificate1">
+                    <h3>Certificate for CSS</h3>
+                </div>
+                <div class="project-item">
+                    <img src="https://drive.google.com/thumbnail?id=1cbuHIoY1rw06vXJPFZiNAu4Ku_6d4rlG&sz=s800" alt="certificate2">
+                    <h3>Certificate for HTML</h3>
+                </div>
+                <div class="project-item">
+                    <img src="https://drive.google.com/thumbnail?id=1wQVuvpE1sc-kqJspiPN2NGqwnAWwfBNL&sz=s800" alt="certificate2">
+                    <h3>Certificate for JAVASCRIPT</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="project-grid">
+                <div class="project-item">
+                    <img src="https://drive.google.com/thumbnail?id=17Bvr-ZFApAmHy4IaqwEuqNL6f6i_7XLr&sz=s800" alt="Project 1 Thumbnail">
+                    <h3>Library management system</h3>
+                    <p>It's software that helps manage a library's collection, track borrowings, and handle member information.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-list">
+                <ul>
+                    <li><strong>Programming Languages:</strong> Java, HTML, JavaScript, C++</li>
+                    <li><strong>Databases:</strong> MySQL</li>
+                    <li><strong>Soft Skills:</strong> Problem Solving, Communication, Teamwork, Adaptability</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <div class="contact-info">
+                <p><i class="fas fa-envelope"></i> Email: <a href="https://lacanlaleflores@gmail.com">lacanlaleflores@gmail.com</a></p>
+                <p><i class="fas fa-phone"></i> Phone: 09123123123</p>
+                <p><i class="fab fa-github"></i> GitHub: <a href="https://github.com/beeswip" target="_blank">github.com/Floresca</a></p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
